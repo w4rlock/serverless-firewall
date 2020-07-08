@@ -32,7 +32,7 @@
   "dependencies": {
     "base-serverless-plugin": "0.1.5",
     "lodash": "4.17.15",
-    "rm": "0.1.8"
+    "serverless-deployment-bucket": "1.1.2"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "8.3.4",
