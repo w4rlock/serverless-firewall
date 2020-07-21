@@ -31,7 +31,7 @@
   "license": "ISC",
   "dependencies": {
     "base-serverless-plugin": "0.1.5",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "serverless-deployment-bucket": "1.1.2"
   },
   "devDependencies": {
