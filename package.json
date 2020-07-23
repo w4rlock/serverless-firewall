@@ -1,7 +1,7 @@
 {
-  "name": "template-base-serverless-plugin",
-  "version": "0.2.1",
-  "description": "Serverless plugin",
+  "name": "serverless-waf-allow-cloudflare-plugin",
+  "version": "0.0.1",
+  "description": "Serverless waf allow cloudflare plugin",
   "keywords": [
     "Serverless"
   ],
@@ -30,9 +30,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "base-serverless-plugin": "0.1.5",
-    "lodash": "4.17.15",
-    "serverless-deployment-bucket": "1.1.2"
+    "base-serverless-plugin": "0.4.0",
+    "handlebars": "4.7.6",
+    "js-yaml": "3.14.0",
+    "lodash": "4.17.19"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "8.3.4",
@@ -49,6 +50,7 @@
     "lint-staged": "10.0.8",
     "npx": "10.2.2",
     "prettier": "2.0.1",
-    "standard-version": "7.1.0"
+    "serverless-deployment-bucket": "1.1.2",
+    "standard-version": "8.0.2"
   }
 }

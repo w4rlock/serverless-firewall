@@ -1,0 +1,42 @@
+Resources:
+  CloudFlareIpSet:
+    Type: AWS::WAFv2::IPSet
+    Properties:
+      Description: CloudFlare ip blocks cidr
+      Name: CloudFlareIPSet
+      Scope: {{ scope }}
+      IPAddressVersion: IPV4
+      Addresses:
+        {{#each whiteListIpsBlock}}
+        - {{ this }}
+        {{/each}}
+
+  CloudFlareWebACL:
+    DependsOn:
+      - CloudFlareIpSet
+    Type: AWS::WAFv2::WebACL
+    Properties:
+      Name: Only-CloudFlare-Allowed
+      Scope: {{ scope }}
+      Description: CloudFlare WebACL Firewall
+      DefaultAction:
+        Block: {}
+      VisibilityConfig:
+        SampledRequestsEnabled: true
+        CloudWatchMetricsEnabled: true
+        MetricName: Waf-WebACL1
+      Rules:
+        - Name: IPlistRuleIPv4
+          Priority: 0
+          Action:
+            Allow: {}
+          VisibilityConfig:
+            SampledRequestsEnabled: true
+            CloudWatchMetricsEnabled: true
+            MetricName: IPlistRuleIPv4Metric
+          Statement:
+            IPSetReferenceStatement:
+              Arn:
+                Fn::GetAtt: CloudFlareIpSet.Arn
+
+
