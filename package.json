@@ -31,7 +31,7 @@
   "license": "ISC",
   "dependencies": {
     "base-serverless-plugin": "0.4.0",
-    "handlebars": "4.7.6",
+    "handlebars": "4.7.7",
     "js-yaml": "3.14.0",
     "lodash": "4.17.19"
   },
